@@ -12,6 +12,7 @@ const geistMono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Anirudh",
   description: "Vedala Anirudh's personal portfolio website",
+  icons: '/favicon.png'
 };
 
 type Props = { children: ReactNode }
