@@ -3,11 +3,13 @@
     From Uiverse.io by Itskrish01
 */
 
+import type { ReactNode } from "react";
+
 type Props = {
     type: "a" | "button",
     target?: "_blank" | "_self" | "_parent" | "_top",
     onClick?: () => void;
-    display: string;
+    display: string | ReactNode;
     redirect: string;
 }
 
@@ -35,7 +37,7 @@ export default function BtnStyled({ ...props }: Props) {
                     <span className="absolute top-0 right-0 w-4 h-4 sm:w-5 sm:h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"/>
                 </span>
                 <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full bg-indigo-600 rounded-md group-hover:translate-x-0"/>
-                <span className="relative w-full text-center text-white transition-colors duration-200 ease-in-out group-hover:text-white">{props.display}</span>
+                {typeof props.display === 'string' ? <span className="relative w-full text-center text-white transition-colors duration-200 ease-in-out group-hover:text-white">{props.display}</span> : props.display}
                 </button>
             )}
         </>

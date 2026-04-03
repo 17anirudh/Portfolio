@@ -23,7 +23,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
       <body className="min-h-screen w-screen overflow-x-hidden flex flex-col relative bg-accent-foreground text-muted">
         <BgWrapper />
         <header className="h-18 sticky top-0 left-0 w-full z-10"></header>
-        <main className="flex-1 relative">
+        <main className="flex-1 z-0">
           {children}
         </main>
       </body>

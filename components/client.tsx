@@ -10,6 +10,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { annotate } from "rough-notation";
 import { skills } from "@/lib/data";
+import { logos } from "@/components/logo";
 
 gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger);
 
@@ -96,7 +97,10 @@ export function Skills() {
                     onMouseLeave={() => handleMouseLeave(index)}
                     className="group flex flex-col items-center bg-muted-foreground border border-border rounded-2xl p-6 w-full sm:w-[calc(50%-12px)] lg:w-[280px] hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                 >
-                    <h3 className="text-xl sm:text-2xl font-semibold mb-5 capitalize text-foreground">{key}</h3>
+                    <h3 className="text-xl sm:text-2xl font-semibold mb-5 capitalize text-foreground flex flex-wrap gap-2">
+                        {key}
+                        {logos[key as keyof typeof logos]()}
+                    </h3>
                     <ul className="flex flex-wrap gap-2.5 justify-center">
                         {value.map((skill) => (
                             <li

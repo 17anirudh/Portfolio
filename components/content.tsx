@@ -3,6 +3,7 @@ Content for all sections which use partial rendering due to CSR headings
 */
 import BtnStyled from "./button-styled";
 import { HeroHeading, Skills } from "./client";
+import ProjectOverlay from "./project-overlay";
 
 export function HeroSection() {
     return (
@@ -35,4 +36,13 @@ export function SkillsSection() {
             <Skills />
         </section>
     )
+}
+
+export function ProjectSection() {
+   return (
+    <section id="projects" className="flex flex-col justify-center items-center min-h-screen w-full">
+        <h2 className="text-[4vw] italic font-light">Projects</h2>
+        <ProjectOverlay />
+    </section> 
+   )
 }
