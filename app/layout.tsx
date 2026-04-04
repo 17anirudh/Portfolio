@@ -16,10 +16,10 @@ export const metadata: Metadata = {
   icons: '/favicon.png',
   openGraph: {
     type: "website",
-    // url: "https://anirudh.vedala.dev",
+    url: "https://17anirudh.vercel.app/",
     title: "Anirudh",
     description: "Vedala Anirudh's personal portfolio website",
-    // images: [{ url: "https://anirudh.vedala.dev/og.png" }]
+    images: [{ url: "https://raw.githubusercontent.com/17anirudh/anirudhh/main/public/landing.png" }]
   }
 };
 
