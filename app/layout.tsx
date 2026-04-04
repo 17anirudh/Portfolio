@@ -13,7 +13,14 @@ const geistMono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Anirudh",
   description: "Vedala Anirudh's personal portfolio website",
-  icons: '/favicon.png'
+  icons: '/favicon.png',
+  openGraph: {
+    type: "website",
+    // url: "https://anirudh.vedala.dev",
+    title: "Anirudh",
+    description: "Vedala Anirudh's personal portfolio website",
+    // images: [{ url: "https://anirudh.vedala.dev/og.png" }]
+  }
 };
 
 type Props = { children: ReactNode }

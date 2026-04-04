@@ -10,7 +10,7 @@ export default function BgWrapper() {
             opacity={[0.1, 0.5]}
             color="#ffffff"
             radius={[0.5, 2]}
-            snowflakeCount={20}
+            snowflakeCount={45}
             style={{
                 position: 'absolute',
                 inset: 0,

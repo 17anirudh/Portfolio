@@ -1,0 +1,16 @@
+{
+  "name": "Anirudh's Portfolio",
+  "short_name": "Anirudh",
+  "description": "Anirudh's personal portfolio website",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090b0c",
+  "theme_color": "#f9fbfb",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

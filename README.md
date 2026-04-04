@@ -1,4 +1,9 @@
-This is a portfolio website for Vedala Anirudh,
+This is a portfolio website for Vedala Anirudh
+
+## Gallery
+
+![Portfolio Screenshot](/public/landing.png)
+![Menu](/public/menu.png)
 
 ## Tech Used
 
@@ -11,7 +16,7 @@ This is a portfolio website for Vedala Anirudh,
 - Shacn v4.1 (Designed Component Library)
 - Bun.js v1.3 (Node.js and npm alternative)
 
-## Setup
+## Installation
 
 Staright forward setup
 
