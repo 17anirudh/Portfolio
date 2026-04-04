@@ -20,13 +20,13 @@ export default function ProjectSection() {
     }, [title]);
 
     return (
-        <section id="projects" className="flex flex-col justify-center items-center min-h-screen w-full">
+        <section suppressHydrationWarning id="projects" className="flex flex-col justify-center items-center min-h-screen w-full">
             <h2 className="text-[4vw] italic font-light mb-27">Projects</h2>
             <div className="flex flex-col justify-between w-full">
                 {projects.map((project, index) => (
                     <div key={index} className="cursor-pointer border flex justify-center items-center w-full h-27 relative">
                         <button
-                            className="hover:underline border-none bg-transparent h-fit text-[2vw] italic font-light cursor-none w-full relative"
+                            className="hover:underline border-none bg-transparent h-fit text-lg sm:text-[2vw] italic font-light cursor-none w-full relative"
                             onClick={() => setTitle(project.title)}
                             onMouseEnter={() => setImg(project.cursor)}
                             onMouseLeave={() => setImg(null)}

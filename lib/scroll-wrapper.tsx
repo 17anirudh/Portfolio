@@ -59,7 +59,8 @@ export default function ScrollWrapper({...props}: Props) {
 
     return (
         <div ref={containerRef} className="w-full min-h-screen">
-            <main ref={contentRef} className={cn(props.className)}>
+            {/* suppressHydrationWarning prevents mismatch errors from GSAP inline styles */}
+            <main ref={contentRef} className={cn(props.className)} suppressHydrationWarning>
                 {props.children}
             </main>
         </div>

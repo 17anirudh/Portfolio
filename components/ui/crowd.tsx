@@ -2,7 +2,6 @@
 
 import { gsap } from "gsap";
 import { useRef } from "react";
-import type { ReactNode } from "react";
 import { useGSAP } from "@gsap/react";
 
 interface CrowdCanvasProps {
@@ -11,7 +10,7 @@ interface CrowdCanvasProps {
   cols?: number;
 }
 
-const CrowdCanvas = ({ src, rows = 15, cols = 7 }: CrowdCanvasProps) => {
+export const CrowdCanvas = ({ src, rows = 10, cols = 7 }: CrowdCanvasProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useGSAP(() => {
@@ -283,18 +282,6 @@ const CrowdCanvas = ({ src, rows = 15, cols = 7 }: CrowdCanvasProps) => {
     <canvas ref={canvasRef} className="absolute bottom-0 h-[90vh] w-full" />
   );
 };
-
-
-export function Skiper39({ children }: { children: ReactNode }) {
-  return (
-    <div className="relative w-full">
-      {children}
-      <div className="absolute bottom-0 h-full w-screen">
-        <CrowdCanvas src="/peeps.png" rows={15} cols={7} />
-      </div>
-    </div>
-  );
-}
 
 /**
  * Skiper 39 Canvas_Landing_004 — React + Canvas

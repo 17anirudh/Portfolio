@@ -11,8 +11,9 @@ import { useRef } from "react";
 import { annotate } from "rough-notation";
 import { skills } from "@/lib/data";
 import { logos } from "@/components/logo";
+import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger);
+gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger, TextPlugin);
 
 export function HeroHeading() {
     const nameRef = useRef<HTMLHeadingElement | null>(null);
@@ -95,7 +96,7 @@ export function Skills() {
                     ref={(el) => { cardRefs.current[index] = el; }}
                     onMouseEnter={() => handleMouseEnter(index)}
                     onMouseLeave={() => handleMouseLeave(index)}
-                    className="group flex flex-col items-center bg-muted-foreground border border-border rounded-2xl p-6 w-full sm:w-[calc(50%-12px)] lg:w-[280px] hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                    className="group flex flex-col items-center bg-muted-foreground border border-border rounded-2xl p-6 w-sm sm:min-w-sm hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                 >
                     <h3 className="text-xl sm:text-2xl font-semibold mb-5 capitalize text-foreground flex flex-wrap gap-2">
                         {key}
@@ -131,13 +132,49 @@ export function ScrambleText({ text }: { text: string }) {
             duration: 2,
             scrollTrigger: {
                 trigger: textRef.current,
-                start: "top 80%",
-                end: "bottom 20%",
-                toggleActions: "play none reverse none"
+                start: "top 90%",
+                end: "bottom 100%",
+                toggleActions: "play none none none"
             }
         })
     })
     return (
-        <h3 ref={textRef} className="text-[1.5vw] text-chart-4" />
+        <h3 ref={textRef} className="text-lg sm:text-[1.5vw] text-chart-4" />
     )
+}
+
+export function Description() {
+    const headingRef = useRef<HTMLHeadingElement | null>(null);
+    const spanRef = useRef<HTMLSpanElement | null>(null);
+
+    let tl = gsap.timeline({ paused: true })
+
+    useGSAP(() => {
+        const heading = headingRef.current;
+        const span = spanRef.current;
+        if (!heading || !span) return;
+        
+        tl.from(heading, {
+            duration: 2,
+            text: { value: ""},
+            ease: "none",
+            stagger: 0.1,
+        });
+
+        tl.from(span, {
+            duration: 2,
+            text: { value: ""},
+            ease: "none",
+            stagger: 0.1,
+        });
+
+        tl.play();
+        
+    }, { scope: headingRef });
+
+    return (
+        <h2 ref={headingRef} className="text-[2.5vw] font-light flex items-center min-h-[1.2em]">
+            Slow yet <span className="font-bold ml-2 text-destructive/80" ref={spanRef}>reliable</span>
+        </h2>
+    );
 }

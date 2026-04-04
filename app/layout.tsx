@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Merriweather, Figtree } from "next/font/google";
 import "./globals.css";
 import type { ReactNode } from "react";
 import BgWrapper from "@/lib/bg-wrapper";
+import Header from "@/components/header";
 
 const figtreeHeading = Figtree({ subsets: ["latin"], variable: "--font-heading" });
 const merriweather = Merriweather({ subsets: ["latin"], variable: "--font-serif" });
@@ -22,7 +23,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
     <html lang="en" className={`h-full antialiased ${geistSans.variable} ${geistMono.variable} font-serif ${merriweather.variable} ${figtreeHeading.variable}`}>
       <body className="min-h-screen w-screen overflow-x-hidden flex flex-col relative bg-accent-foreground text-muted">
         <BgWrapper />
-        <header className="h-18 sticky top-0 left-0 w-full z-10"></header>
+        <Header />
         <main className="flex-1 z-0">
           {children}
         </main>
