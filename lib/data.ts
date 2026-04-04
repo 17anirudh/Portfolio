@@ -18,8 +18,10 @@ type skillType = {
     Languages: string[];
 }
 
+export type projectKeyType = "Quirks" | "ATS Score" | "Deepfake Detector" | "Hash Bytes";
+
 export type projectType = {
-    title: string;
+    title: projectKeyType;
     cursor: string;
     live?: string;
     github: string;
@@ -28,6 +30,7 @@ export type projectType = {
     desc: string[];
     special?: string;
 }
+
 
 export const socials: socialsType[] = [
     {
@@ -105,9 +108,8 @@ export const projects: projectType[] = [
         tech: "Next.js, TypeScript, SQLite, FastAPI, Bun.js, ChromaDB, SQLModel, Pytorch, Langchain, ultralytics, OpenCV, Numpy, tqdm and 5 DL models",
         desc: [
             "Advanced web application designed to combat the spread of misinformation by detecting deepfakes",
-            "News Verification: Analyze text input to detect unverified, speculative, or factually lacking claims using a RAG (Retrieval-Augmented Generation) system.",
-            "Video Analysis: Detect deepfakes in videos using 5 different deep learning models",
-            "Image Deepfake Detector: Upload images for analysis, returning a clear FAKE or REAL prediction."
+            "News Verification: Analyze text input to detect unverified, speculative, or factually lacking claims using a RAG web search.",
+            "Media Analysis: Detect deepfakes in videos and images",
         ],
         special: "EfficientNetV2 gives near-Xception performance but with better scaling and training efficiency, so it’s a more balanced choice for practical deployment"
     },
