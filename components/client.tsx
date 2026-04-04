@@ -145,36 +145,29 @@ export function ScrambleText({ text }: { text: string }) {
 
 export function Description() {
     const headingRef = useRef<HTMLHeadingElement | null>(null);
-    const spanRef = useRef<HTMLSpanElement | null>(null);
-
     let tl = gsap.timeline({ paused: true })
 
     useGSAP(() => {
         const heading = headingRef.current;
-        const span = spanRef.current;
-        if (!heading || !span) return;
+        if (!heading) return;
+
+        const annotation = annotate(heading, { type: "underline", color: "#7DF9FF", animationDuration: 3000 });
         
         tl.from(heading, {
             duration: 2,
             text: { value: ""},
             ease: "none",
             stagger: 0.1,
+            onComplete: () => { annotation.show() }
         });
 
-        tl.from(span, {
-            duration: 2,
-            text: { value: ""},
-            ease: "none",
-            stagger: 0.1,
-        });
-
-        tl.play();
+        tl.play()
         
     }, { scope: headingRef });
 
     return (
-        <h2 ref={headingRef} className="text-[2.5vw] font-light flex items-center min-h-[1.2em]">
-            Slow yet <span className="font-bold ml-2 text-destructive/80" ref={spanRef}>reliable</span>
+        <h2 ref={headingRef} className="text-[2.5vw] font-light flex items-center min-h-[1.2em] text-[#7DF9FF]">
+            Systems-first, bloat-last.
         </h2>
     );
 }
