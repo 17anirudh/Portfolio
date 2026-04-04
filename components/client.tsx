@@ -116,3 +116,28 @@ export function Skills() {
         </div>
     );
 }
+
+export function ScrambleText({ text }: { text: string }) {
+    const textRef = useRef<HTMLHeadingElement | null>(null);
+
+    useGSAP(() => {
+      if(!textRef.current) return;
+      
+      gsap.to(textRef.current, {
+            scrambleText: {
+                text: text,
+                chars: "upperCase"
+            },
+            duration: 2,
+            scrollTrigger: {
+                trigger: textRef.current,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none reverse none"
+            }
+        })
+    })
+    return (
+        <h3 ref={textRef} className="text-[1.5vw] text-chart-4" />
+    )
+}

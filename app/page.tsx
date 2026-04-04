@@ -4,12 +4,15 @@ import dynamic from "next/dynamic";
 
 const SkillsSection = dynamic(() => import("@/components/content").then((mod) => mod.SkillsSection));
 const ProjectsSection = dynamic(() => import("@/components/projects").then((mod) => mod.default));
+const JourneySection = dynamic(() => import("@/components/content").then((mod) => mod.JourneySection));
+
 
 export default function Home() {
   return (
     <ScrollWrapper>
       <HeroSection />
       <SkillsSection />
+      <JourneySection />
       <ProjectsSection />
     </ScrollWrapper>
   );

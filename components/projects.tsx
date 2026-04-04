@@ -74,7 +74,7 @@ function Cursor({ img }: {img: string}) {
     });
 
     return (
-        <div ref={cursorRef} className="pointer-events-none absolute left-100 top-2 z-100 w-[20vw] h-[20vh]">
+        <div ref={cursorRef} className="pointer-events-none absolute left-100 top-2 z-100 w-[35vw] h-[35vh]">
             <Image
                 src={img}
                 alt="cursor"
@@ -125,15 +125,15 @@ function Overlay({ title, onClose }: { title: projectKeyType; onClose: () => voi
             <ScrollArea className="max-w-2xl w-full h-full">
                 <div className="bg-inherit border rounded-lg p-6 shadow-lg flex flex-col justify-center">
                     <div className="w-full aspect-video relative mb-4 rounded overflow-hidden">
-                        <Image src={data.cursor} alt={data.title} fill className="object-cover"/>
+                        <Image src={data.cursor} alt={data.title} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" fill className="object-cover"/>
                     </div>
                     <div className="flex flex-wrap gap-3 items-center justify-center">
                         <h3 className="text-2xl font-semibold">{data.title}</h3>
-                        <button className="cursor-pointer" onClick={handleClose}><XIcon color="red"/></button>
+                        <button className="cursor-pointer bg-black rounded-full" onClick={handleClose}><XIcon color="red"/></button>
                     </div>
                     <div className="flex flex-wrap gap-3 items-center mb-4">
                         <BtnStyled type="a" redirect={data.github} display="GitHub" />
-                        {data.live && <BtnStyled type="a" redirect={data.live} display="Live" />}
+                        {data.live && <BtnStyled type="a" redirect={data.live} display="Live" green pulse />}
                     </div>
                     <div className="flex flex-wrap gap-2 mb-4">
                         {data.tech.split(", ").map((tech, index) => (

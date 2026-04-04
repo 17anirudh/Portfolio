@@ -31,6 +31,13 @@ export type projectType = {
     special?: string;
 }
 
+type expType = {
+    companyImage: string;
+    companyName: string;
+    designation: string;
+    type: 'internship' | 'full-time' | 'part-time' | 'freelance' | 'contract' | 'assistant'
+    duration: string
+}
 
 export const socials: socialsType[] = [
     {
@@ -124,6 +131,30 @@ export const projects: projectType[] = [
             "Can quicky encrypt/decrypt plain text/file to quickly understand most common symmetric encryption algorithms"
         ],
         special: "Visual learning makes any concept easy :)"
+    }
+] as const;
+
+export const experience: expType[] = [
+    {
+        companyImage: "https://play-lh.googleusercontent.com/OGgZaAeiZKigVObicUptFJoWvGs4pgpCfunMeR-QWYKhn0UvJSxcOZcFJMCEiYBfflGxTHlbz-Ad5158yno-2g=w480-h960-rw",
+        companyName: "Grug.io",
+        designation: "Software Engineer Intern",
+        type: "internship",
+        duration: "March 2026 - Present"
+    },
+    {
+        companyImage: "https://play-lh.googleusercontent.com/Fjga-fnKPNPSg1_3mVis70od3LrCSvrL1lmwl2123h_RJ4DxlUjCQLym05LqDapG2Q=w480-h960-rw",
+        companyName: "Infosys Springboard",
+        designation: "AI Project Intern",
+        type: "internship",
+        duration: "December 2025 - March 2026"
+    },
+    {
+        companyImage: "https://www.ndimdelhi.org/wp-content/uploads/2023/10/All_India_Council_for_Technical_Education_logo.png",
+        companyName: "AICTE",
+        designation: "Full Stack Developer",
+        type: "internship",
+        duration: "May 2025 - September 2025"
     }
 ] as const;
 
