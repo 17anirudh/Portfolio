@@ -2,8 +2,14 @@ This is a portfolio website for Vedala Anirudh
 
 ## Gallery
 
+- Landing Page
 ![Portfolio Screenshot](/public/landing.png)
+
+- Menu
 ![Menu](/public/menu.png)
+
+- Lighthouse (Mobile Navigation)
+![Lighthouse](/public/lighthouse.png)
 
 ## Tech Used
 
