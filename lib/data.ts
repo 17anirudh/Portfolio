@@ -2,8 +2,6 @@
 Static data for the application
 */
 
-import { json } from "stream/consumers";
-
 type socialsType = {
     appName: string;
     userName: string;
@@ -73,7 +71,7 @@ export const socials: socialsType[] = [
 ] as const
 
 export const skills: skillType = {
-    TypeScript: ["Next.js", "React", "Node.js", "Bun.js", "Prisma", "Nest.js", "Zod", "Tanstack Query"],
+    TypeScript: ["Next.js", "React", "Node.js", "Bun.js", "Prisma", "Zod", "Tanstack Query"],
     Python: ["FastAPI", "Numpy", "Langgraph", "Pydantic", "Pandas"],
     Data: ["PostgreSQL", "SQLite"],
     Concepts: ["OOP", "APIs (REST, WS)", "Networking (HTTP, TCP/IP)", "DSA (basics)"],

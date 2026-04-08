@@ -12,7 +12,7 @@ export function HeroSection() {
     return (
         <section suppressHydrationWarning id="hero" className="flex flex-col justify-center items-center min-h-screen w-full">
             <HeroHeading />
-            <h2 className="text-[4vw] font-light">Aspiring Software Engineer</h2>
+            <h2 className="text-[18px] sm:text-3xl xl:text-5xl font-light">Aspiring Software Engineer</h2>
             <Description />
             <div className="flex flex-row gap-4">
                 <BtnStyled 
@@ -33,7 +33,7 @@ export function HeroSection() {
 export function SkillsSection() {
     return (
         <section suppressHydrationWarning id="skills" className="flex flex-col justify-center items-center min-h-screen w-full">
-            <h2 className="text-[4vw] italic font-light">Skills</h2>
+            <h2 className="text-2xl sm:text-4xl lg:text-6xl italic font-light">Skills</h2>
             <Skills />
         </section>
     )
@@ -42,7 +42,7 @@ export function SkillsSection() {
 export function JourneySection() {
     return (
         <section suppressHydrationWarning id="journey" className="flex flex-col justify-center items-center min-h-screen w-full">
-            <h2 className="text-[4vw] italic font-light">Journey</h2>
+            <h2 className="text-2xl sm:text-4xl lg:text-6xl italic font-light">Journey</h2>
             <ul className="list-item list-none justify-center items-center">
                 {experience.map((item, index) => (
                     <li key={index} className="p-3 flex flex-wrap gap-3 items-center mt-9">
@@ -75,7 +75,7 @@ export function JourneySection() {
 export function ContactSection() {
     return (
       <section suppressHydrationWarning id="Contact" className="flex flex-col justify-center items-center min-h-[90vh] w-full mt-9 relative">
-            <h2 className="text-[4vw] italic font-light absolute top-0 mx-auto">Contact Me</h2>
+            <h2 className="text-2xl sm:text-4xl lg:text-6xl italic font-light">Contact Me</h2>
                 <div className="absolute top-30 z-30 flex flex-wrap gap-2 items-center justify-center"> 
                     {socials.map((item, index) => (
                         <Redirect

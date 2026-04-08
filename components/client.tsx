@@ -35,7 +35,7 @@ export function HeroHeading() {
     })
 
     return (
-        <h1 ref={nameRef} className="whitespace-pre-wrap wrap-break-words uppercase text-[8vw] font-serif" />
+        <h1 ref={nameRef} className="whitespace-pre-wrap wrap-break-words uppercase text-4xl sm:text-7xl lg:text-[7rem] text-center font-serif" />
     )
 }
 
@@ -166,7 +166,7 @@ export function Description() {
     }, { scope: headingRef });
 
     return (
-        <h2 ref={headingRef} className="text-[2.5vw] font-light flex items-center min-h-[1.2em] text-[#7DF9FF]">
+        <h2 ref={headingRef} className="text-[18px] sm:text-3xl xl:text-5xl font-light flex items-center min-h-[1.2em] text-[#7DF9FF]">
             Systems-first, bloat-last.
         </h2>
     );

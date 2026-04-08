@@ -4,7 +4,7 @@ import gsap from "gsap"
 import { useRef, useState, useEffect } from "react"
 import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { XIcon } from "lucide-react"
-import Views from "./views"
+// import Views from "./views"
 import { useGSAP } from "@gsap/react"
 
 gsap.registerPlugin(ScrollSmoother)
@@ -82,7 +82,8 @@ export default function Header() {
                         onClick={openNav}
                         className="font-heading font-bold text-xl cursor-pointer hover:opacity-70 transition-opacity flex flex-wrap justify-center items-center gap-4"
                     >
-                        Anirudh <Views />
+                        Anirudh
+                        {/* Anirudh <Views /> */}
                     </button>
                 </div>
             </header>
