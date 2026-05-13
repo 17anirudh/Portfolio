@@ -19,6 +19,14 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "www.ndimdelhi.org"
+      },
+      {
+        protocol: "https",
+        hostname: "tenor.com"
+      },
+      {
+        protocol: "https",
+        hostname: "media1.tenor.com"
       }
     ]
   }

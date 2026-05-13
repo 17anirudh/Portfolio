@@ -1,158 +1,131 @@
-/*
-Static data for the application
-*/
+import type { Social, Skill, Project, Experience } from "./types";
 
-type socialsType = {
-    appName: string;
-    userName: string;
-    profileLink: string;
-}
-
-type skillType = {
-    TypeScript: string[];
-    Python: string[];
-    Data: string[];
-    Concepts: string[];
-    Languages: string[];
-}
-
-export type projectKeyType = "Quirks" | "ATS Score" | "Deepfake Detector" | "Hash Bytes";
-
-export type projectType = {
-    title: projectKeyType;
-    cursor: string;
-    live?: string;
-    github: string;
-    domain: string;
-    tech: string;
-    desc: string[];
-    special?: string;
-}
-
-type expType = {
-    companyImage: string;
-    companyName: string;
-    designation: string;
-    type: 'internship' | 'full-time' | 'part-time' | 'freelance' | 'contract' | 'assistant'
-    duration: string
-}
-
-export const socials: socialsType[] = [
+const socials: Social[] = [
     {
-        appName: "GitHub",
-        userName: "17anirudh",
-        profileLink: "https://github.com/17anirudh"
+        brand: "GitHub",
+        username: "17anirudh",
+        link: "https://github.com/17anirudh"
     },
     {
-        appName: "Instgram",
-        userName: "17veed",
-        profileLink: "https://instagram.com/17veed"
+        brand: "Instgram",
+        username: "17veed",
+        link: "https://instagram.com/17veed"
     },
     {
-        appName: "LinkedIn",
-        userName: "vedala-anirudh",
-        profileLink: "https://linkedin.com/in/vedala-anirudh"
+        brand: "LinkedIn",
+        username: "vedala-anirudh",
+        link: "https://linkedin.com/in/vedala-anirudh"
     },
     {
-        appName: "Twitter",
-        userName: "17anirudh",
-        profileLink: "https://twitter.com/17anirudh"
+        brand: "Twitter",
+        username: "17anirudh",
+        link: "https://twitter.com/17anirudh"
     },
     {
-        appName: "Email",
-        userName: "vedalaanirudh@gmail.com",
-        profileLink: "mailto:vedalaanirudh@gmail.com"
+        brand: "Email",
+        username: "vedalaanirudh@gmail.com",
+        link: "mailto:vedalaanirudh@gmail.com"
     },
     {
-        appName: "Leetcode",
-        userName: "17anirudh",
-        profileLink: "https://leetcode.com/u/17anirudh"
+        brand: "Leetcode",
+        username: "17anirudh",
+        link: "https://leetcode.com/u/17anirudh"
     }
 ] as const
 
-export const skills: skillType = {
-    TypeScript: ["Next.js", "React", "Node.js", "Bun.js", "Prisma", "Zod", "Tanstack Query"],
-    Python: ["FastAPI", "Numpy", "Langgraph", "Pydantic", "Pandas"],
-    Data: ["PostgreSQL", "SQLite"],
-    Concepts: ["OOP", "APIs (REST, WS)", "Networking (HTTP, TCP/IP)", "DSA (basics)"],
-    Languages: ["Typescript", "Python", "Java", "SQL"]
+const skills: Skill = {
+    framework: ["Next.js", "Spring Boot", "FastAPI", "Tensorflow"],
+    cloud: ["GCP", "AWS", "Firebase", "Supabase"],
+    devops: ["Docker", "GitHub Actions", "Nginx"],
+    ai: ["Claude API", "Claude Code", "Claude Cowork", "Claude Agent SDK", "CrewAI", "Langchain"],
+    languages: ["Python", "Java", "JavaScript", "TypeScript"],
+    databases: ["PostgreSQL", "MongoDB", "Redis"]
 } as const
 
-export const projects: projectType[] = [
+const projects: Project[] = [
     {
-        title: "Quirks",
-        cursor: "https://raw.githubusercontent.com/17anirudh/quirks/refs/heads/master/assets/Landing.png",
-        github: "https://github.com/17anirudh/quirks",
-        domain: "Full Stack Development",
-        tech: "Tanstack Router, TypeScript, TailwindCSS, Shadcn/ui, Supabase, Elysia.js, Bun.js",
-        desc: [
-            "Opinionated social media application encouraging networking and forced cooldowns",
-            "Has a unique feature of server side enforced cooldowns for interactions",
-            "No ads, No quick interactions (likes and comments)" 
-        ],
-        live: "https://quirks.vercel.app",
-        special: "Deployed, currently publishing reserch paper"
+        name: "Ledger",
+        picture: "https://raw.githubusercontent.com/17anirudh/bird/main/assets/landing.png",
+        overview: "Highly reliable and compliant ledger application for seamless wealth management and transfer",
+        description: "Bird is a robust financial ledger system designed for high reliability and compliance, enabling secure and efficient wealth management and transfer operations.",
+        tech: ["Spring Boot", "Spring Security", "Spring Data JPA", "Apache Kafka", "Gradle", "JUnit", "PostgreSQL", "Next.js", "React", "Biome", "Docker", "GitHub Actions"],
+        git: "https://github.com/17anirudh/bird",
+        focus: "Reliable, Tolerant and Event Driven Architecture"
     },
     {
-        title: "ATS Score",
-        cursor: "https://raw.githubusercontent.com/17anirudh/ATS-Score/refs/heads/main/ss.png",
-        github: "https://github.com/17anirudh/ATS-Score",
-        domain: "LLMs",
-        tech: "Ollama, HTML, CSS, Flask, PyPDF2, python docx, SSML",
-        desc: [
-            "ATS Score is a web application that helps you optimize your resume for ATS (Applicant Tracking Systems)",
-            "It uses Ollama to generate a score for your resume based on how well it matches the job description",
-            "It also provides suggestions to improve your resume"
-        ],
+        name: "Quirks",
+        picture: "https://raw.githubusercontent.com/17anirudh/quirks/refs/heads/master/assets/Landing.png",
+        overview: "Constraint driven Social Media Application",
+        description: "Opinionated Social media application with enforced cooldowns for better phone usage, purposely disabled quick interactions like likes and comments for a meaningful experience",
+        tech: ["Tanstack Router", "TypeScript", "TailwindCSS", "Shadcn/ui", "Supabase", "Elysia.js", "Bun.js"],
+        git: "https://github.com/17anirudh/quirks",
+        focus: "TypeScript Full Stack"
     },
     {
-        title: "Deepfake Detector",
-        cursor: "https://raw.githubusercontent.com/17anirudh/deepfake-detection/master/landing.png",
-        github: "https://github.com/17anirudh/deepfake-detection",
-        domain: "Computer Vision and RAG",
-        tech: "Next.js, TypeScript, SQLite, FastAPI, Bun.js, ChromaDB, SQLModel, Pytorch, Langchain, ultralytics, OpenCV, Numpy, tqdm and 5 DL models",
-        desc: [
-            "Advanced web application designed to combat the spread of misinformation by detecting deepfakes",
-            "News Verification: Analyze text input to detect unverified, speculative, or factually lacking claims using a RAG web search.",
-            "Media Analysis: Detect deepfakes in videos and images",
-        ],
+        name: "ATS Score",
+        picture: "https://raw.githubusercontent.com/17anirudh/ATS-Score/refs/heads/main/ss.png",
+        git: "https://github.com/17anirudh/ATS-Score",
+        focus: "LLMs",
+        tech: ["Ollama", "HTML", "CSS", "Flask", "PyPDF2", "python docx", "SSML"],
+        description: "antardvara.ssl is a web application that helps you optimize your resume for ATS (Applicant Tracking Systems) It uses Ollama to generate a score for your resume based on how well it matches the job description It also provides suggestions to improve your resume",
+        overview: "antardvara.ssl is ATS Score predictor"
+    },
+    {
+        name: "Deepfake Detector",
+        picture: "https://raw.githubusercontent.com/17anirudh/deepfake-detection/master/landing.png",
+        git: "https://github.com/17anirudh/deepfake-detection",
+        focus: "Computer Vision and RAG",
+        tech: ["Next.js", "TypeScript", "SQLite", "FastAPI", "Bun.js", "ChromaDB", "SQLModel", "Pytorch", "Langchain", "ultralytics", "OpenCV", "Numpy", "tqdm", "5 DL models"],
+        description: "Advanced web application designed to combat the spread of misinformation by detecting deepfakes",
+        overview: "Advanced web application designed to combat the spread of misinformation by detecting deepfakes",
         special: "EfficientNetV2 gives near-Xception performance but with better scaling and training efficiency, so it’s a more balanced choice for practical deployment"
     },
     {
-        title: "Hash Bytes",
-        cursor: "https://raw.githubusercontent.com/17anirudh/hash-bytes/master/Landing.png",
-        github: "https://github.com/17anirudh/hash-bytes",
-        domain: "Symmetric cryptography",
-        tech: "Next.js, Shad-cn, TailwindCSS, FastAPI, Pydantic, SQLite, SQLAlchemy, pycryptodome, REST API",
-        desc: [
-            "Hash Bytes is a educational tool to quickly encrypt and decrypt any content using different cryptographic algorithms and revelant cipher modes along with explanations.",
-            "Can quicky encrypt/decrypt plain text/file to quickly understand most common symmetric encryption algorithms"
-        ],
+        name: "Hash Bytes",
+        picture: "https://raw.githubusercontent.com/17anirudh/hash-bytes/master/Landing.png",
+        git: "https://github.com/17anirudh/hash-bytes",
+        focus: "Symmetric cryptography",
+        tech: ["Next.js", "Shad-cn", "TailwindCSS", "FastAPI", "Pydantic", "SQLite", "SQLAlchemy", "pycryptodome", "REST API"],
+        description: "Hash Bytes is a educational tool to quickly encrypt and decrypt any content using different cryptographic algorithms and revelant cipher modes along with explanations.",
+        overview: "Hash Bytes is a educational tool to quickly encrypt and decrypt any content using different cryptographic algorithms and revelant cipher modes along with explanations.",
         special: "Visual learning makes any concept easy :)"
     }
 ] as const;
 
-export const experience: expType[] = [
+const experiences: Experience[] = [
     {
-        companyImage: "https://play-lh.googleusercontent.com/OGgZaAeiZKigVObicUptFJoWvGs4pgpCfunMeR-QWYKhn0UvJSxcOZcFJMCEiYBfflGxTHlbz-Ad5158yno-2g=w480-h960-rw",
-        companyName: "Grug.io",
-        designation: "Software Engineer Intern",
         type: "internship",
-        duration: "March 2026 - Present"
+        picture: "https://play-lh.googleusercontent.com/OGgZaAeiZKigVObicUptFJoWvGs4pgpCfunMeR-QWYKhn0UvJSxcOZcFJMCEiYBfflGxTHlbz-Ad5158yno-2g=w480-h960-rw",
+        company: "Grug.io",
+        role: "Software Engineer Intern",
+        description: [
+            "Reduced S2S (Speech-to-Speech) voice jitter by 78% by engineering a unified synchronization logic using react hooks and genkit helper functions (model-specific and websockts)", 
+            "Extended tool-calling framework to automate few business specific needs replacing manual form-entry with seamless automated extraction, improving operational UX efficiency by 76%."
+        ],
+        duration: "March 2026 - April 2026",
+        tech: ["Expo (React Native)", "Firebase (Firestore, Cloud Functions)", "Genkit"]
     },
     {
-        companyImage: "https://play-lh.googleusercontent.com/Fjga-fnKPNPSg1_3mVis70od3LrCSvrL1lmwl2123h_RJ4DxlUjCQLym05LqDapG2Q=w480-h960-rw",
-        companyName: "Infosys Springboard",
-        designation: "AI Project Intern",
+        picture: "https://play-lh.googleusercontent.com/Fjga-fnKPNPSg1_3mVis70od3LrCSvrL1lmwl2123h_RJ4DxlUjCQLym05LqDapG2Q=w480-h960-rw",
+        company: "Infosys Springboard",
+        role: "AI Project Intern",
         type: "internship",
-        duration: "December 2025 - March 2026"
+        description: ["Engineered a high-performance asynchronous storywriting platform that integrates genAI with a custom RAG and is optimized for non-blocking network I/O, reducing system latency by 20% while maintaining seamless real-time interactivity for writers."],
+        duration: "December 2025 - March 2026",
+        tech: ["Next.js", "FastAPI", "ChromaDB", "Ollama (qwen 2.5)"]
     },
     {
-        companyImage: "https://www.ndimdelhi.org/wp-content/uploads/2023/10/All_India_Council_for_Technical_Education_logo.png",
-        companyName: "AICTE",
-        designation: "Full Stack Developer",
+        picture: "https://www.ndimdelhi.org/wp-content/uploads/2023/10/All_India_Council_for_Technical_Education_logo.png",
+        company: "AICTE",
+        role: "Full Stack Developer",
         type: "internship",
-        duration: "May 2025 - September 2025"
+        description: [
+            "Developed an education blog for students to understand the importance of symmetric key encryption in cybersecurity.", 
+            "Implemented a realtime and auditable fastapi backend with SQLite database where the actual encryption algorithm is stored and retrieved."
+        ],
+        duration: "May 2025 - September 2025",
+        tech: ["Next.js", "FastAPI", "SQLite", "pycryptodome"]
     }
 ] as const;
 
+export { socials, skills, projects, experiences };
